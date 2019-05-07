@@ -8,29 +8,18 @@
 
 namespace Simpale\Tool;
 
-use Simple\Tools\Path;
+use Simple\File\FileFactory;
 
 class Config
 {
-    const AppConfig = 'app.php';
-
-    const DatabaseConfig = 'database.php';
-
-    public static function getAppConfig(string $key): ?string
+    public static function getConfig(string $config)
     {
-        return self::getConfig(self::AppConfig, $key);
-    }
-
-    private static function getConfig(string $config): array
-    {
-        if (file_exists(Path::configPath() . $config)) {
-            return include Path::configPath() . $config;
+        if (!strpos($config, '.')) {
+            return FileFactory::createPHPFile($config)->read();
         }
-        return [];
+        $configKeys = explode('.', $config);
+        return FileFactory::createPHPFile($configKeys[0])->read()[1];
+
     }
 
-    private static function getArrayKeys(array $config, string $key)
-    {
-        
-    }
 }

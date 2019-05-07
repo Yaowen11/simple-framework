@@ -4,6 +4,11 @@ namespace Simple\Exception;
 
 use Throwable;
 
+/**
+ * 运行时异常
+ * Class RuntimeException
+ * @package Simple\Exception
+ */
 class RuntimeException extends \Exception
 {
     use ExceptionToString;

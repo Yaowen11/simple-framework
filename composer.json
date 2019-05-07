@@ -5,7 +5,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Yaowen11",
+            "name": "张耀文",
             "email": "760735372@qq.com"
         }
     ],
@@ -20,7 +20,7 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
+        "post-install-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
     }

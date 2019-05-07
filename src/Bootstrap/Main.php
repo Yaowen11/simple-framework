@@ -3,18 +3,18 @@
 namespace Simple\Bootstrap;
 
 use App\Console\Command;
-use Simple\Helper\App;
+use Simpale\Tool\Config;
 use Simple\Error\Error;
 
 class Main
 {
     private static function initialize(): void
     {
-        $timezone = App::config('timezone');
+        $timezone = Config::getConfig('App.timezone');
         if (date_default_timezone_get() !== $timezone) {
             date_default_timezone_set($timezone);
         }
-        $env = App::config('env');
+        $env = Config::getConfig('env');
         if ($env !== 'product') {
             Error::register();
         }

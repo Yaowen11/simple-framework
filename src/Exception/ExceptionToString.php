@@ -2,10 +2,6 @@
 
 namespace Simple\Exception;
 
-use Simpale\File\FileFactory;
-use Simpale\Tool\Logger;
-use Simpale\Helper\App;
-
 trait ExceptionToString
 {
     public function __toString()
@@ -20,7 +16,7 @@ trait ExceptionToString
         ], JSON_UNESCAPED_UNICODE);
     }
 
-    private function recordException()
+    private function recordExceptionToLog()
     {
         $exceptionLogFile = FileFactory::createLogFile(App::logPath() . App::config('log')['exception']);
         Logger::recordingLog($exceptionLogFile, json_encode([

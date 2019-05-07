@@ -4,7 +4,12 @@ namespace Simple\Exception;
 
 use Throwable;
 
-class HttpRequestException extends \Exception
+/**
+ * 请求异常
+ * Class ClientRequestException
+ * @package Simple\Exception
+ */
+class ClientRequestException extends \Exception
 {
     use ExceptionToString;
 
