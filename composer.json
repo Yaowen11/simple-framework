@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": "^7.1",
-        "ext-json": "*"
+        "ext-json": "*",
+      "ext-mysqli": "*"
     },
     "autoload": {
         "psr-4": {

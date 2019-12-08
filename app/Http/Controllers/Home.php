@@ -17,4 +17,11 @@ class Home
     {
         ResponseFactory::createJsonResponse('hello world')->response();
     }
+    public function test()
+    {
+        if ($this instanceof Home) {
+            return 'he1';
+        }
+        return 'hello';
+    }
 }
